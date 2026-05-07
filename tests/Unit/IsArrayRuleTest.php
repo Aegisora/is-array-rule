@@ -7,6 +7,7 @@ use Aegisora\RuleContract\Models\Result;
 use Aegisora\RuleContract\RuleInterface;
 use Aegisora\Rules\IsArrayRule;
 use PHPUnit\Framework\TestCase;
+use stdClass;
 
 class IsArrayRuleTest extends TestCase
 {
@@ -70,6 +71,13 @@ class IsArrayRuleTest extends TestCase
             ],
             'context value - string' => [
                 'context' => Context::create(''),
+                'expectedResult' => [
+                    'isValid' => false,
+                    'failedRuleCode' => 'is_array_rule',
+                ],
+            ],
+            'context value - object' => [
+                'context' => Context::create(new stdClass()),
                 'expectedResult' => [
                     'isValid' => false,
                     'failedRuleCode' => 'is_array_rule',
