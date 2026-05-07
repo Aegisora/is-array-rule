@@ -90,6 +90,16 @@ class IsArrayRuleTest extends TestCase
                     'failedRuleCode' => 'is_array_rule',
                 ],
             ],
+            'context value - callable' => [
+                'context' => Context::create(
+                    static function () {
+                    }
+                ),
+                'expectedResult' => [
+                    'isValid' => false,
+                    'failedRuleCode' => 'is_array_rule',
+                ],
+            ],
         ];
     }
 
