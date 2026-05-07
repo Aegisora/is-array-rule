@@ -83,6 +83,13 @@ class IsArrayRuleTest extends TestCase
                     'failedRuleCode' => 'is_array_rule',
                 ],
             ],
+            'context value - resource' => [
+                'context' => Context::create(tmpfile()),
+                'expectedResult' => [
+                    'isValid' => false,
+                    'failedRuleCode' => 'is_array_rule',
+                ],
+            ],
         ];
     }
 
