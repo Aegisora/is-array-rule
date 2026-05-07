@@ -3,6 +3,7 @@
 namespace Aegisora\Rules\Tests\Unit;
 
 use Aegisora\RuleContract\Models\Result;
+use Aegisora\RuleContract\RuleInterface;
 use Aegisora\Rules\IsArrayRule;
 use PHPUnit\Framework\TestCase;
 
@@ -15,6 +16,11 @@ class IsArrayRuleTest extends TestCase
         parent::setUp();
 
         $this->rule = new IsArrayRule();
+    }
+
+    public function testCreate(): void
+    {
+        self::assertInstanceOf(RuleInterface::class, IsArrayRule::create());
     }
 
     private static function assertActualResultEqualsExpected(
