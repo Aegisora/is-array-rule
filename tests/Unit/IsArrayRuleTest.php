@@ -54,6 +54,13 @@ class IsArrayRuleTest extends TestCase
                     'failedRuleCode' => null,
                 ],
             ],
+            'context value - integer' => [
+                'context' => Context::create(1),
+                'expectedResult' => [
+                    'isValid' => false,
+                    'failedRuleCode' => 'is_array_rule',
+                ],
+            ],
         ];
     }
 
