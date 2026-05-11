@@ -10,6 +10,17 @@ The package is built on top of `aegisora/rule-contract` and follows its validati
 
 ---
 
+## ✨ Features
+
+- 🔹 Minimalistic implementation with no extra dependencies
+- 🔹 Strict array validation using `is_array`
+- 🔹 Fully compatible with Aegisora validation pipeline
+- 🔹 Clear `Context → Result` flow
+- 🔹 No raw booleans — only structured `Result`
+- 🔹 Safe execution via base `Rule` abstraction
+- 🔹 Convenient static factory method (`create`)
+- 🔹 Lightweight and predictable behavior
+
 ---
 
 ## ⚖️ License
