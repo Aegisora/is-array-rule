@@ -59,6 +59,46 @@ new stdClass()
 
 ---
 
+## 🏗️ Basic Usage
+
+### ✅ Validate array value
+
+```php
+use Aegisora\Rules\IsArrayRule;
+use Aegisora\RuleContract\Models\Context;
+
+$result = IsArrayRule::create()->validate(
+    Context::create(['name' => 'John'])
+);
+
+if ($result->isValid()) {
+    // value is array
+} else {
+    // value is not array
+}
+```
+
+---
+
+### ❌ Invalid value example
+
+```php
+use Aegisora\Rules\IsArrayRule;
+use Aegisora\RuleContract\Models\Context;
+
+$result = IsArrayRule::create()->validate(
+    Context::create('not-array')
+);
+
+if ($result->isValid()) {
+    // will not happen
+} else {
+    // validation failed
+}
+```
+
+---
+
 ## ⚖️ License
 
 This package is open-source and licensed under the MIT License. See the LICENSE for details.
