@@ -99,6 +99,49 @@ if ($result->isValid()) {
 
 ---
 
+## 🧩 Factory Method
+
+```php
+IsArrayRule::create();
+```
+
+Creates a new instance of `IsArrayRule`.
+
+---
+
+## ⚠️ Validation Rules
+
+Validation internally uses PHP native function:
+
+```php
+is_array($value)
+```
+
+The rule returns:
+
+- valid `Result` → if value is array
+- invalid `Result` → if value is not array
+
+No exceptions are thrown for unsupported types.
+
+---
+
+## 🏛️ Architecture
+
+This package relies on `aegisora/rule-contract`.
+
+Validation flow:
+
+1. `validate()` is called
+2. `Context` is passed
+3. `executeValidate()` is executed
+4. `is_array()` check is performed
+5. A `Result` is returned
+
+All logic is encapsulated within the base `Rule` abstraction.
+
+---
+
 ## ⚖️ License
 
 This package is open-source and licensed under the MIT License. See the LICENSE for details.
