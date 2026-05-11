@@ -31,6 +31,34 @@ composer require aegisora/is-array-rule
 
 ---
 
+## 🚀 Core Concept
+
+This package performs array validation:
+
+- accepts a value via `Context`
+- checks whether the value is an array
+- returns a standardized `Result`
+
+Supported values:
+
+```php
+[]
+['foo', 'bar']
+['key' => 'value']
+```
+
+Unsupported values:
+
+```php
+null
+true
+123
+'string'
+new stdClass()
+```
+
+---
+
 ## ⚖️ License
 
 This package is open-source and licensed under the MIT License. See the LICENSE for details.
